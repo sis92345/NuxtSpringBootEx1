@@ -1,0 +1,14 @@
+[
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "D:\\\\study\\\\helloSpring\\\\frontend\\\\helloSpring\\\\pages\\\\inspire.vue",
+    "chunkName": "pages/inspire"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\study\\\\helloSpring\\\\frontend\\\\helloSpring\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Bbs">
+	<!-- 패이징 처리: 원하는  -->
+	<!-- 전체 게시물 조회 -->
+	<!-- 연결 테스트용 쿼리-->
+	<select id="currentDate" resultType="java.util.Date">
+		SELECT SYSDATE FROM dual
+	</select>
+
+	<select id="currentDateMySql" resultType="java.util.Date">
+		SELECT SYSDATE()
+	</select>
+
+	<select id="listAll" resultType="com.example.bbs.vo.BbsInfo">
+		SELECT
+			IDX
+			,WRITER
+			,TITLE
+			,CONTENTS
+		FROM BBS
+	</select>
+</mapper>
