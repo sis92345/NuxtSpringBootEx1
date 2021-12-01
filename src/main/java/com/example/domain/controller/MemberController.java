@@ -66,10 +66,10 @@ public class MemberController {
         return "hello";
     }
 
-    @RequestMapping( value = "/" , method = RequestMethod.GET )
-    public String index(){
-        return "hello";
-    }
+//    @RequestMapping( value = "/" , method = RequestMethod.GET )
+//    public String index(){
+//        return "forward:index.html";
+//    }
 
     /**
      * @apiNote mvc + 탬플릿
