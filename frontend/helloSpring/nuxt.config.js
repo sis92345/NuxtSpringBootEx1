@@ -1,9 +1,9 @@
 import colors from 'vuetify/es5/util/colors'
-
+require("dotenv").config();
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  target : 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - helloSpring',
@@ -38,16 +38,24 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
   ],
+
+  dotenv: { filename:  '.env' + process.env.NUXT_ENV_STAGE },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
 
   //axios 설정
   axios: {
     proxy: true
+  },
+
+  generate: {
+    dir: "../../src/main/resources/static",
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

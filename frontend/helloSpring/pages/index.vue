@@ -9,8 +9,14 @@
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
         </v-card-title>
-        <v-card-title class="headline">
-          요청된 페이지는 {{ home }}
+        <v-card-title class="headline" v-text="home">
+          요청된 페이지는
+        </v-card-title>
+        <v-card-title class="headline" style="font-size: 100px" v-text="siteName">
+          현재 페이지 이름은...
+        </v-card-title>
+        <v-card-title class="headline" style="font-size: 100px" v-text="nodeEnv">
+          현재 페이지 이름은...
         </v-card-title>
         <v-card-text>
           <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
@@ -81,11 +87,16 @@
 <script>
   export default {
 
-    data : {
-      home : ""
+    data () {
+      return {
+        home : "",
+        siteName : process.env.SITE_NAME,
+        nodeEnv : process.env.NODE_ENV
+      }
     },
     created(){
-
+      console.log( process.env.SITE_NAME );
+      console.log( process.env.NODE_ENV );
       this.$axios.get( "http://localhost:8080/member/home" , { } , {} )
         .then( res => this.home = res.data);
 
